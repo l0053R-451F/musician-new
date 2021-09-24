@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amazing music</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body >
+    <header class=" lg:container lg:mx-auto">
+        <nav class=" flex justify-between items-center">
+            <a href="#" class=""><h1 class=" text-2xl leading-8 font-extrabold">amazing musician</h1></a>
+
+                <div class=" hidden lg:block lg:space-x-7">
+                    <a href="">
+                        <span class=" tracking-widest text-sm text-gray-navalink">CATALOGUE</span>
+                    </a>
+                    <a href="">
+                        <span class=" tracking-widest text-sm text-gray-navalink">SOUNDTRACKS</span>
+                    </a>
+                    <a href="">
+                        <span class=" tracking-widest text-sm text-gray-navalink">NEW ALBUMS</span>
+                    </a>
+                    <a href="">
+                        <span class=" tracking-widest text-sm text-gray-navalink">GENRES</span>
+                    </a>
+                </div>
+
+            <div class=" flex items-center space-x-4">
+                <span class=" material-icons">search</span>
+                <div class=" lg:hidden mt-1"><i class=" material-icons" onclick="toggler()">menu</i></div>
+                <div class=" hidden lg:block"><button class=" bg-red-sbtn font-semibold text-sm rounded-md pl-5 pr-5 pb-3 pt-3 text-white flex items-center tracking-widest"><span class=" material-icons text-gray-400">lock</span> SIGN UP</button></div>
+            </div>
+        </nav>
+
+        <div class="hidden lg:hidden mt-3" id="mobile_view">
+            <ul class=" space-y-2">
+                <li class=" tracking-widest text-sm text-gray-navalink">
+                    CATALOGUE
+                </li>
+                <li class=" tracking-widest text-sm text-gray-navalink">
+                    SOUNDTRACKS
+                </li>
+                <li class=" tracking-widest text-sm text-gray-navalink">
+                    NEW ALBUMS
+                </li>
+                <li class=" tracking-widest text-sm text-gray-navalink">
+                    GENRES
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="space-y-8 md:flex md:justify-center md:items-center md:space-x-16 md:container md:mx-auto">
+      <div><img src="./images/sliderimg.png" alt=""></div>
+      <div class="space-y-4 lg:w-3/12">
+        <h2 class=" font-bold text-4xl tracking-tight">Over 500+ tracks from
+          classical to jazz to punk </h2>
+          <p class=" text-gray-slidertext tracking-wide">Browse recommendations, search by favourite artists,
+            and make you life louder.</p>
+            <div class=" space-x-5">
+              <button class=" pl-7 pr-7 pt-2 pb-2 rounded-md bg-red-sbtn text-white text-sm font-semibold">Try Now</button>
+              <button class=" pl-4 pr-4 pt-2 pb-2 border border-gray-400 rounded-md text-gray-400 text-sm font-semibold">Watch Video</button>
+            </div>
+      </div>
+    </div>
+    
+
+<script>
+    function toggler(){
+        var mobile_view = document.getElementById('mobile_view');
+        if(mobile_view.style.display === 'none'){
+            mobile_view.style.display = 'block';
+        }
+        else{
+            mobile_view.style.display = 'none';
+        }
+    }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class=" bg-black">
+    <div class=" lg:container lg:mx-auto lg:pl-16 lg:pr-16">
+    <nav class=" flex items-center p-3 flex-wrap">
+        <a href="">
+            <img src="./images/logo.webp" class=" fill-current mr-2" alt="">
+        </a>
+        <button class=" inline-flex p-3 ml-auto lg:hidden nav-toggler" data-target="#navigation ">
+            <i class=" material-icons text-white">menu</i>
+        </button>
+        <div class=" top-nav w-full lg:inline-flex lg:flex-grow lg:w-auto" id="navigation">
+            <div class=" lg:inline-flex lg:flex-row lg:ml-auto flex flex-col">
+                <a href="" class=" lg:inline-flex lg:w-auto px-3 py-2 rounded hover:text-pink-navigation">
+                    <span class=" uppercase text-white">Home</span>
+                </a>
+
+                <a href="" class=" lg:inline-flex lg:w-auto px-3 py-2 rounded hover:text-pink-navigation">
+                    <span class=" uppercase text-white">Speaker</span>
+                </a>
+
+                <a href="" class=" lg:inline-flex lg:w-auto px-3 py-2 rounded hover:text-pink-navigation">
+                    <span class=" uppercase text-white">Schedule</span>
+                </a>
+
+                <a href="" class=" lg:inline-flex lg:w-auto px-3 py-2 rounded hover:text-pink-navigation">
+                    <span class=" uppercase text-white">Location</span>
+                </a>
+
+                <a href="" class=" lg:inline-flex lg:w-auto px-3 py-2 rounded hover:text-pink-navigation">
+                    <span class=" uppercase text-white">Blog</span>
+                </a>
+
+                <a href="" class=" lg:inline-flex lg:w-auto px-3 py-2 rounded hover:text-pink-navigation">
+                    <span class=" uppercase text-white">Contact</span>
+                </a>
+
+                <a href="" class=" bg-yellow-400 lg:inline-flex lg:w-auto px-3 py-2 rounded hover:bg-black hover:border hover:border-yellow-400">
+                    <span class=" uppercase text-white">Registration</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+  $(".nav-toggler").each(function (_, navToggler) {
+    var target = $(navToggler).data("target");
+    $(navToggler).on("click", function () {
+      $(target).animate({
+        height: "toggle",
+      });
+    });
+  });
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "music",
+  "version": "1.0.0",
+  "description": "Amazing Music",
+  "scripts": {
+    "dev": "postcss tailwind.css -o ./css/styles.css -w --verbose",
+    "build": "postcss tailwind.css -o ./css/styles.css"
+  },
+  "devDependencies": {
+    "@tailwindcss/jit": "^0.1.18",
+    "autoprefixer": "^10.2.5",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.1.1"
+  }
+}
