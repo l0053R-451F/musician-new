@@ -38,3 +38,43 @@
 }
 
 
+/*Shafi*/
+.carousel{
+  position: relative;
+}
+
+.carousel .carousel-item,
+.carousel .carousel-item--hidden{
+  display: none;
+}
+.carousel .carousel-action{
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+.carousel .carousel-action button{
+  background-color: #F5F5F5;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.carousel .carousel-active{
+  display: flex;
+  animation: slide 0.5s;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: opacity linear;
+  }
+}
+
+
+

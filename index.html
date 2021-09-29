@@ -55,19 +55,61 @@
             </ul>
         </div>
     </header>
-    <div class="space-y-8 mt-14 md:flex md:justify-center md:items-center md:space-x-16">
-      <div><img src="./images/sliderimg.png" alt=""></div>
-      <div class="space-y-4 lg:w-3/12">
-        <h2 class=" font-bold text-4xl tracking-tight">Over 500+ tracks from
-          classical to jazz to punk </h2>
-          <p class=" text-gray-slidertext tracking-wide">Browse recommendations, search by favourite artists,
-            and make you life louder.</p>
-            <div class=" space-x-5">
-              <button class=" pl-7 pr-7 pt-2 pb-2 rounded-md bg-red-sbtn text-white text-sm font-semibold">Try Now</button>
-              <button class=" pl-4 pr-4 pt-2 pb-2 border border-gray-400 rounded-md text-gray-400 text-sm font-semibold">Watch Video</button>
+
+    <!--Carousel Start-->
+    <div class="carousel overflow-hidden">
+        <!--Carousel item start-->
+        <div class="space-y-8 mt-14 md:flex md:justify-center md:items-center md:space-x-16 carousel-item carousel-active">
+            <div><img src="./images/sliderimg.png" alt=""></div>
+            <div class="space-y-4 lg:w-3/12">
+                <h2 class=" font-bold text-4xl tracking-tight">Over 500+ tracks from
+                    classical to jazz to punk 1</h2>
+                <p class=" text-gray-slidertext tracking-wide">Browse recommendations, search by favourite artists,
+                    and make you life louder.</p>
+                <div class=" space-x-5">
+                    <button class=" pl-7 pr-7 pt-2 pb-2 rounded-md bg-red-sbtn text-white text-sm font-semibold">Try Now</button>
+                    <button class=" pl-4 pr-4 pt-2 pb-2 border border-gray-400 rounded-md text-gray-400 text-sm font-semibold">Watch Video</button>
+                </div>
             </div>
-      </div>
+        </div>
+        <!--Carousel item end-->
+        <!--Carousel item start-->
+        <div class="space-y-8 mt-14 md:flex md:justify-center md:items-center md:space-x-16 carousel-item ">
+            <div><img src="./images/sliderimg.png" alt=""></div>
+            <div class="space-y-4 lg:w-3/12">
+                <h2 class=" font-bold text-4xl tracking-tight">Over 500+ tracks from
+                    classical to jazz to punk 2 </h2>
+                <p class=" text-gray-slidertext tracking-wide">Browse recommendations, search by favourite artists,
+                    and make you life louder.</p>
+                <div class=" space-x-5">
+                    <button class=" pl-7 pr-7 pt-2 pb-2 rounded-md bg-red-sbtn text-white text-sm font-semibold">Try Now</button>
+                    <button class=" pl-4 pr-4 pt-2 pb-2 border border-gray-400 rounded-md text-gray-400 text-sm font-semibold">Watch Video</button>
+                </div>
+            </div>
+        </div>
+        <!--Carousel item end-->
+        <!--Carousel item start-->
+        <div class="space-y-8 mt-14 md:flex md:justify-center md:items-center md:space-x-16 carousel-item">
+            <div><img src="./images/sliderimg.png" alt=""></div>
+            <div class="space-y-4 lg:w-3/12">
+                <h2 class=" font-bold text-4xl tracking-tight">Over 500+ tracks from
+                    classical to jazz to punk 3</h2>
+                <p class=" text-gray-slidertext tracking-wide">Browse recommendations, search by favourite artists,
+                    and make you life louder.</p>
+                <div class=" space-x-5">
+                    <button class=" pl-7 pr-7 pt-2 pb-2 rounded-md bg-red-sbtn text-white text-sm font-semibold">Try Now</button>
+                    <button class=" pl-4 pr-4 pt-2 pb-2 border border-gray-400 rounded-md text-gray-400 text-sm font-semibold">Watch Video</button>
+                </div>
+            </div>
+        </div>
+        <!--Carousel item end-->
+        <div class="carousel-action">
+            <button id="carousel-button-prev" aria-label="Previous slide"><span class="material-icons">chevron_left</span></button>
+            <button id="carousel-button-next" aria-label="Next slide"><span class="material-icons">chevron_right</span></button>
+        </div>
+
     </div>
+    <!--Carousel End-->
     <hr class=" border-t-2 border-dotted mt-8">
 
     <div class="mt-5">
@@ -122,6 +164,36 @@
             mobile_view.style.display = 'none';
         }
     }
+    let slidePosition = 0;
+    const divCount = document.getElementsByClassName('carousel-item');
+    const totalDiv = divCount.length;
+    console.log(totalDiv);
+    function updateSlidePosition() {
+        for (let slide of divCount) {
+            slide.classList.remove('carousel-active');
+            slide.classList.add('carousel-item--hidden');
+        }
+
+        divCount[slidePosition].classList.add('carousel-active');
+    }
+    document.getElementById('carousel-button-next').addEventListener("click", function() {
+        if (slidePosition === totalDiv - 1) {
+            slidePosition = 0;
+        } else {
+            slidePosition++;
+        }
+
+        updateSlidePosition();
+    });
+    document.getElementById('carousel-button-prev').addEventListener("click", function() {
+        if (slidePosition === 0) {
+            slidePosition = totalDiv - 1;
+        } else {
+            slidePosition--;
+        }
+
+        updateSlidePosition();
+    });
 </script>
 
 
