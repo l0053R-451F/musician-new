@@ -7,14 +7,16 @@
     <title>amazing music</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 </head>
-<body >
-    <header class=" lg:container lg:mx-auto">
+<body class=" container mx-auto">
+    <header class="">
         <nav class=" flex justify-between items-center">
             <a href="#" class=""><h1 class=" text-2xl leading-8 font-extrabold">amazing musician</h1></a>
 
-                <div class=" hidden lg:block lg:space-x-7">
+                <div class=" hidden lg:block lg:space-x-7 ">
                     <a href="">
                         <span class=" tracking-widest text-sm text-gray-navalink">CATALOGUE</span>
                     </a>
@@ -29,7 +31,7 @@
                     </a>
                 </div>
 
-            <div class=" flex items-center space-x-4">
+            <div class=" flex items-center space-x-4 ">
                 <span class=" material-icons">search</span>
                 <div class=" lg:hidden mt-1"><i class=" material-icons" onclick="toggler()">menu</i></div>
                 <div class=" hidden lg:block"><button class=" bg-red-sbtn font-semibold text-sm rounded-md pl-5 pr-5 pb-3 pt-3 text-white flex items-center tracking-widest"><span class=" material-icons text-gray-400">lock</span> SIGN UP</button></div>
@@ -53,7 +55,7 @@
             </ul>
         </div>
     </header>
-    <div class="space-y-8 md:flex md:justify-center md:items-center md:space-x-16 md:container md:mx-auto">
+    <div class="space-y-8 mt-14 md:flex md:justify-center md:items-center md:space-x-16">
       <div><img src="./images/sliderimg.png" alt=""></div>
       <div class="space-y-4 lg:w-3/12">
         <h2 class=" font-bold text-4xl tracking-tight">Over 500+ tracks from
@@ -66,6 +68,48 @@
             </div>
       </div>
     </div>
+    <hr class=" border-t-2 border-dotted mt-8">
+
+    <div class="mt-5">
+        <div class=" flex justify-between items-center">
+            <h2 class=" text-3xl font-medium leading-normal">New Release</h2>
+            <h4 class=" text-gray-navalink font-semibold text-base cursor-pointer">See All</h4>
+        </div>
+
+        <div class="grid grid-cols-1">
+            <div>
+                <div>
+                    <img src="./images/card1.jpg" alt="">
+                    <p class=" text-base leading-tight tracking-wide">Kid Cudi & Kanye West</p>
+                    <p class=" text-sm tracking-wide">Kids See Ghosts, 2021</p>
+                    <div class='rating-stars'>
+                        <ul id='stars' class="">
+                          <li class='star' title='Poor' data-value='1'>
+                            <i class="fas fa-bolt"></i>
+                          </li>
+                          <li class='star' title='Fair' data-value='2'>
+                            <i class="fas fa-bolt"></i>
+                          </li>
+                          <li class='star' title='Good' data-value='3'>
+                            <i class="fas fa-bolt"></i>
+                          </li>
+                          <li class='star' title='Excellent' data-value='4'>
+                            <i class="fas fa-bolt"></i>
+                          </li>
+                          <li class='star' title='WOW!!!' data-value='5'>
+                            <i class="fas fa-bolt"></i>
+                          </li>
+                        </ul>
+                      </div>
+                </div>
+
+                <div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     
 
 <script>
@@ -78,6 +122,68 @@
             mobile_view.style.display = 'none';
         }
     }
+</script>
+
+
+
+<script>
+    $(document).ready(function(){
+  
+  /* 1. Visualizing things on Hover - See next part for action on click */
+  $('#stars li').on('mouseover', function(){
+    var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
+   
+    // Now highlight all the stars that's not after the current hovered star
+    $(this).parent().children('li.star').each(function(e){
+      if (e < onStar) {
+        $(this).addClass('hover');
+      }
+      else {
+        $(this).removeClass('hover');
+      }
+    });
+    
+  }).on('mouseout', function(){
+    $(this).parent().children('li.star').each(function(e){
+      $(this).removeClass('hover');
+    });
+  });
+  
+  
+  /* 2. Action to perform on click */
+  $('#stars li').on('click', function(){
+    var onStar = parseInt($(this).data('value'), 10); // The star currently selected
+    var stars = $(this).parent().children('li.star');
+    
+    for (i = 0; i < stars.length; i++) {
+      $(stars[i]).removeClass('selected');
+    }
+    
+    for (i = 0; i < onStar; i++) {
+      $(stars[i]).addClass('selected');
+    }
+    
+    // JUST RESPONSE (Not needed)
+    var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
+    var msg = "";
+    if (ratingValue > 1) {
+        msg = "Thanks! You rated this " + ratingValue + " stars.";
+    }
+    else {
+        msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
+    }
+    responseMessage(msg);
+    
+  });
+  
+  
+});
+
+
+function responseMessage(msg) {
+  $('.success-box').fadeIn(200);  
+  $('.success-box div.text-message').html("<span>" + msg + "</span>");
+}
 </script>
 
 
