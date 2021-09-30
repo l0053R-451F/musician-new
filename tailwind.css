@@ -15,6 +15,11 @@
   src: local('ProximaNova'), url(./font/ProximaNova-Regular.otf) format('otf');
 }
 
+.page-container{
+  width: 70%;
+  margin: 0 auto;
+}
+
 
 .rating-stars ul > li.star {
   display:inline-block;
@@ -23,7 +28,7 @@
 
 /* Idle State of the stars */
 .rating-stars ul > li.star > i.fas {
-   font-size: 15px;/* Change the size of the stars */
+   font-size: 10px;/* Change the size of the stars */
   color:#ccc; /* Color on idle state */
 }
 
@@ -36,5 +41,7 @@
 .rating-stars ul > li.star.selected > i.fas {
   color:#FFBD5A;
 }
+
+
 
 
