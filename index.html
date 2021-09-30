@@ -168,6 +168,16 @@
     const divCount = document.getElementsByClassName('carousel-item');
     const totalDiv = divCount.length;
     console.log(totalDiv);
+    setInterval(function(){
+        if (slidePosition === totalDiv - 1) {
+            slidePosition = 0;
+        } else {
+            slidePosition++;
+        }
+
+        updateSlidePosition();
+
+    }, 3000);
     function updateSlidePosition() {
         for (let slide of divCount) {
             slide.classList.remove('carousel-active');
