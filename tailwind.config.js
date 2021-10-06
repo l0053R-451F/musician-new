@@ -9,6 +9,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      spacing: {
+        'backboardW': '265px',
+      },
       colors: {
         red:{
           sbtn: '#DF3940',
