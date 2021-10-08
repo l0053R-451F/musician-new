@@ -20,6 +20,10 @@
   margin: 0 auto;
 }
 
+.shadow-outer{
+  box-shadow: 0px 16px 40px rgba(0, 0, 0, 0.15);
+}
+
 
 .rating-stars ul > li.star {
   display:inline-block;
